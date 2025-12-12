@@ -1,0 +1,340 @@
+.amplifier-section {
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.rear-section {
+  background: linear-gradient(135deg, #4a4a4a 0%, #3a3a3a 100%);
+  border: 2px solid #555;
+}
+
+.sub-section {
+  background: #2a2a2a;
+}
+
+.front-section {
+  background: #2a2a2a;
+}
+
+.section-header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.controls-grid {
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+}
+
+/* REAR Section - 2 rows of 4 controls */
+.rear-grid {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+}
+
+/* SUB Section - 1 row of 3 controls */
+.sub-grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+}
+
+/* FRONT Section - 1 row of 4 controls */
+.front-grid {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.control-button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-button {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid #666;
+  background: linear-gradient(135deg, #555 0%, #444 100%);
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+}
+
+.control-button:hover {
+  background: linear-gradient(135deg, #555 0%, #444 100%);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.control-button.has-recommendation {
+  border-color: #4CAF50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.button-options {
+  display: flex;
+  gap: 10px;
+  font-size: 10px;
+  color: #ccc;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.button-options span.active {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.control-knob-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.knob-container {
+  position: relative;
+  width: 110px;
+  height: 110px;
+}
+
+.knob {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #555 0%, #444 100%);
+  border: 5px solid #666;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  box-shadow: 
+    inset 0 3px 6px rgba(255, 255, 255, 0.15),
+    0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.knob.has-recommendation {
+  border-color: #4CAF50;
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+.knob-indicator {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 20px;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.knob-recommendation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 110px;
+  pointer-events: none;
+}
+
+.recommendation-marker {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 15px;
+  background: #4CAF50;
+  border-radius: 2px;
+  box-shadow: 0 0 4px rgba(76, 175, 80, 0.8);
+}
+
+.knob-label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.band-label {
+  font-size: 9px;
+  font-weight: normal;
+  color: #aaa;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+.knob-values {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 9px;
+  color: #ccc;
+  padding: 0 15px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.knob-value-display {
+  font-size: 14px;
+  font-weight: bold;
+  color: #4CAF50;
+  margin-top: 4px;
+}
+
+.knob-input {
+  width: 100%;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.control-slider-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.slider-label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.slider-container {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.slider-track {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background: #444;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.slider-thumb {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #777 0%, #666 100%);
+  border: 3px solid #888;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.2),
+    0 3px 6px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+}
+
+.slider-thumb:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.slider-recommendation {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 12px;
+  background: #4CAF50;
+  border-radius: 2px;
+  box-shadow: 0 0 4px rgba(76, 175, 80, 0.8);
+  pointer-events: none;
+}
+
+.slider-options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 9px;
+  color: #ccc;
+  padding: 0 10px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.slider-options span.active {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+@media (max-width: 768px) {
+  .rear-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+  }
+  
+  .sub-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .front-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+  
+  .controls-grid {
+    gap: 15px;
+  }
+  
+  .knob-container {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .knob {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .control-button {
+    width: 80px;
+    height: 80px;
+    font-size: 10px;
+  }
+}
+
